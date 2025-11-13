@@ -1,20 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void) {
-    int i = 10;
-    char c = 'a';
+int swap(int *x, int *y) {
+ 	int temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
 
-    int  *iptr;   
-    char *cptr;   
-    int  *iptr2;  
-
-    iptr  = &i;   
-    cptr  = &c;  
-    iptr2 = iptr; 
-
-    printf("i : %p\n%p (size:%i)\n", iptr, &i, sizeof(iptr));
-    printf("c : %p\n%p (size:%i)\n", cptr, &c, sizeof(cptr));
-    printf("iptr2 : %p, %i\n", iptr2, *iptr2);
-    return 0;
+int main(int argc, char *argv[]){
+	int a=3, b=5;
+	
+	swap(&a,&b);
+	printf("a:%i, b:%i\n", a, b);
+	return 0;
+	
 }
